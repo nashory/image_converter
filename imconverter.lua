@@ -31,27 +31,28 @@ print(opt)
 
 
 local path = opt.input
-print(path)
 local imlist = utils.get_file_list(path, opt.format)
 local imlen =  #imlist
 
 
+os.execute('rmdir output')
 os.execute('mkdir -p output')
 local target = {}
 if opt.extract > 0  then
     local idx = 1
     for i = 1, opt.extract do
         table.insert(target, imlist[idx])
-        local idx = idx + math.floor(imlen/opt.extract)
+        idx = idx + math.floor(imlen/opt.extract)
     end
 elseif opt.extract == 0 then
     target = imlist
 end
 
-
 for idx = 1, #target do
-    local im = image.load(string.format('%s/%s', opt.output, target[idx]))
-    torch.save(string.format('%s/%s', opt.output, target[idx]), im)
+    local im = image.load(string.format('%s/%s', opt.input, target[idx]))
+
+    image.save(string.format('%s/%s', opt.output, target[idx]), im)
+    print(string.format('[%d/%d] finished.', idx, #target))
 end
 print(#target)
 

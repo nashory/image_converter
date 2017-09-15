@@ -93,12 +93,15 @@ end
 function utils.get_file_list(path, format)
     local imlist = {}
     for file in lfs.dir(path) do
+        if file ~= '.' and file ~= '..' then
         --lfs.attributes(file, "mode") == "file" then
         --    print(file)
         --end
-        --if not file == '.' and not file == '..' then table.insert(imlist, file) end
-        
+        --if not file == '.' and not file == '..' then
+            table.insert(imlist, file)
+        end
     end
+    table.sort(imlist)
     return imlist
 end
 
