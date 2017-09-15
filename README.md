@@ -18,9 +18,9 @@ __3. Extract desired number of images from the source__
 
 __4. Resize and padding__
 
-__5. Multi-threaded loading and saving
+__5. Multi-threaded loading and saving__
 
-__6. Adjust contrast/brightness
+__6. Adjust contrast/brightness__
 
 __7. Save images into .t7 format__
 
@@ -41,13 +41,13 @@ th imconverter.lua --input <source_dir> --output <target_dir> --format <image_fo
 ~~~
 
 ## TODO
-[] Change file format
-[] Filter invalid image
-[] extract specific number of images
-[] resize and padding
-[] Multi-threaded loading and saving
-[] Adjust contrast/brightness
-[] Save into .t7 format
+- [ ] Change file format
+- [ ] Filter invalid image
+- [ ] extract specific number of images
+- [ ] resize and padding
+- [ ] Multi-threaded loading and saving
+- [ ] Adjust contrast/brightness
+- [ ] Save into .t7 format
 
 
 ## Author
